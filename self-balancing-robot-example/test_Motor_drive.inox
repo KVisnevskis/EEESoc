@@ -1,0 +1,28 @@
+#include "motor_helper.h"
+
+int rotDirectionA = 0;
+int rotDirectionB = 0;
+
+void setup() {
+  pinMode(enA, OUTPUT);
+  pinMode(enB, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  // Set initial rotation direction
+  initializeMotors();
+}
+
+void loop()
+{
+    int i = 0;
+    while (i<100)
+    {
+        analogWrite(enA, i);
+        i++;
+        delay(20);
+    }
+    digitalWrite(in1, HIGH);
+    digitalWrite(in2, LOW);
+}
